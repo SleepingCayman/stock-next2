@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <p>
         This is a sample page for HONGZHEN CHEN
       </p>
+      <Link href="/about">About</Link>
     </>
   )
 }
