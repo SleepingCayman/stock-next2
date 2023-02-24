@@ -5,13 +5,14 @@ import { useEffect, useState } from 'react'
 export default function Home({ stock }) {
 
   function deleteStock(id) {
-    fetch(`https://stock-next22-hx0iel4bz-sleepingcayman.vercel.app/${id}`,
+    fetch(`https://stock-next22-hx0iel4bz-sleepingcayman.vercel.app/api/stock/products/${id}`,
       {
         method: 'DELETE'
       })
       .then(res => res.json())
       .then(data => {
-        alert("Deleting " + id)
+        // alert("Deleting " + id)
+        window.location.reload(false);
       })
 
   }
@@ -48,7 +49,7 @@ export default function Home({ stock }) {
   )
 }
 export async function getServerSideProps() {
-  const res = await fetch(`https://stock-next22-hx0iel4bz-sleepingcayman.vercel.app/`)
+  const res = await fetch(`https://stock-next22-hx0iel4bz-sleepingcayman.vercel.app/api/stock/products/`)
   const stock = await res.json()
   // console.debug('stock 1', stock)
   return { props: { stock } }

@@ -27,7 +27,7 @@ export default function Stock({ stock }) {
   // STEP 1: This function will be executed at the server before loading the page.
   export async function getServerSideProps({ params }) {
     console.debug('params', params)
-    const res = await fetch(`https://stock-next22-hx0iel4bz-sleepingcayman.vercel.app/${params.id}`)
+    const res = await fetch(`https://stock-next22-hx0iel4bz-sleepingcayman.vercel.app/api/stock/products/${params.id}`)
     const stock = await res.json()
     console.debug('stock 1', stock)
     return { props: { stock } }
