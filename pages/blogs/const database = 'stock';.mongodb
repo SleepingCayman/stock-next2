@@ -1,0 +1,10 @@
+const database = 'stock';
+const collection = 'products';
+
+use(database);
+
+db.products.insert({
+      "code": "6159563",
+      "name": "Suger",
+      "price": 100
+})

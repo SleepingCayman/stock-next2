@@ -7,12 +7,12 @@ export default async function handler(req, res) {
     console.log("req.method: ", req.method)
 
     if (req.method === 'GET') {
-        const docs = await Article.find()
+        const docs = await Product.find()
         res.status(200).json(docs)
     } else if (req.method === 'POST') {
         console.log(req.body)
         // res.status(200).json(req.body)
-        const doc = await Article.create(req.body)
+        const doc = await Product.create(req.body)
         res.status(201).json(doc)
     } else {
         res.setHeader('Allow', ['GET', 'POST'])
@@ -22,11 +22,11 @@ export default async function handler(req, res) {
 
 
 
-const articleSchema = new Schema({
+const productSchema = new Schema({
     code: String,
     name: String,
     price: Number,
 });
 
 console.log("Mongoose Models", models)
-const Article = models?.article || model('article', articleSchema);
+const Product = models?.product || model('product', productSchema);
