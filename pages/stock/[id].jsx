@@ -32,3 +32,4 @@ export default function Stock({ stock }) {
     console.debug('stock 1', stock)
     return { props: { stock } }
   }
+  
