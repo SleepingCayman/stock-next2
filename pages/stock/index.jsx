@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 export default function Home({ stock }) {
 
   function deleteStock(id) {
-    fetch(`http://localhost:3000/api/stock/products/${id}`,
+    fetch(`https://stock-next22-hx0iel4bz-sleepingcayman.vercel.app/${id}`,
       {
         method: 'DELETE'
       })
